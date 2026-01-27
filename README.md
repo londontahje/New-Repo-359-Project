@@ -4,3 +4,5 @@ Project for 359
 Team Members-
 Team Member 1
 Team Member 2
+
+full project idea
