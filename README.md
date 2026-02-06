@@ -2,7 +2,9 @@
 Project for 359
 
 Team Members-
-Team Member 1
-Team Member 2
+Ninel 
+London
 
-full project idea
+Networko Enumeration and Vulnerability Scanning Script 
+
+This python script we're going to use will be designed for network enumeration and vulnerability scnning. It would offer a variety of options to scan and analyze network systems, making this a useful tool for security professionals
