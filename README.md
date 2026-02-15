@@ -16,4 +16,8 @@ Network Traffic ANalysis: analyzing network trafic for further insights
 Banner Grabbing: Identifying services that is running on open ports 
 
 
+Tools:
+Python 
+Network tooks: ping, nmap
+
 
