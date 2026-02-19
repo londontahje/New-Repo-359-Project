@@ -1,1 +1,104 @@
 
+# Project: Network Scanner for Class (359)
+#   - Checks if devices answer to pings (ICMP)
+#   - Looks for open ports on a target
+#   - Tries to grab banners (what service/version is running)
+#   - Shows basic explanations of what open ports might mean
+#
+# Important: ONLY use this on networks YOU own or have permission to scan!
+# Scanning other people's networks without permission is illegal.
+
+import socket   # helps us make network connections
+import time     # for waiting / timeouts
+
+def ping_host(target):
+    """Simple check: can we reach this IP with a ping?"""
+    # your ping code here (ICMP or just socket test)
+    print(f"Trying to ping {target} ...")
+    # ... your logic ...
+    return True  # or False
+
+
+def scan_common_ports(target):
+    """Check the most common ports people care about"""
+    common_ports = [21, 22, 23, 80, 443, 445, 3389]  # FTP, SSH, Telnet, HTTP, HTTPS, SMB, RDP
+    
+    open_ports = []
+    
+    print(f"\nScanning {target} for common ports...")
+    
+    for port in common_ports:
+        try:
+            # Try to connect (timeout after 1 second)
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(1)
+            result = sock.connect_ex((target, port))
+            
+            if result == 0:
+                print(f"✓ Port {port} is OPEN")
+                open_ports.append(port)
+            else:
+                print(f"  Port {port} is closed")
+                
+            sock.close()
+            
+        except Exception:
+            print(f"  Port {port} → error (probably closed)")
+    
+    return open_ports
+
+
+def explain_open_ports(open_ports):
+    """Tell the user in simple English what the open ports might mean"""
+    print("\n=== What these open ports usually mean ===\n")
+    
+    # Simple lookup table — easy to read and change
+    explanations = {
+        21:  "FTP - file transfer. Risk: High (sends passwords in plain text)",
+        22:  "SSH - secure remote login. Risk: Medium (use strong password!)",
+        23:  "Telnet - old remote login. Risk: VERY HIGH (no encryption at all)",
+        80:  "HTTP - normal website. Risk: Medium (needs updates)",
+        443: "HTTPS - secure website. Risk: Low-Medium (usually good)",
+        445: "SMB - Windows file sharing. Risk: High (WannaCry used this)",
+        3389:"RDP - Windows remote desktop. Risk: High (hackers guess passwords)"
+    }
+    
+    if not open_ports:
+        print("No common dangerous ports found — that's good!")
+        return
+    
+    for port in open_ports:
+        if port in explanations:
+            msg = explanations[port]
+            print(f"Port {port}: {msg}")
+        else:
+            print(f"Port {port}: Open — but we don't have a simple explanation yet")
+
+
+# ────────────────────────────────────────────────
+# Main part — this is what actually runs
+# ────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    print("Welcome to our simple network scanner!")
+    print("Only scan targets you own or have permission for!\n")
+    
+    target = input("Enter IP or hostname to scan (example: 192.168.1.1): ").strip()
+    
+    if not target:
+        print("No target entered. Goodbye.")
+    else:
+        # Step 1: Can we even reach it?
+        if ping_host(target):
+            print(f"Great — {target} answered!")
+            
+            # Step 2: Look for open ports
+            found_ports = scan_common_ports(target)
+            
+            # Step 3: Explain what we found
+            explain_open_ports(found_ports)
+            
+        else:
+            print(f"Could not reach {target}. Maybe it's offline or blocking pings?")
+    
+    print("\nScan finished. Thanks for using our tool!")
