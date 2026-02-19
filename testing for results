@@ -1,0 +1,9 @@
+since we're both using MAC's, in the terminal we're going to input ollama run llama3.2:3b to have AI implemented on our devices.   
+
+
+Next, to "explain the scan"  to our python code, were going to install and import ollama.
+
+this is the following beginner friendly script we're using to scan and have results printed:
+
+
+
