@@ -35,7 +35,7 @@ def scan_common_ports(target):
             result = sock.connect_ex((target, port))
             
             if result == 0:
-                print(f"✓ Port {port} is OPEN")
+                print(f" Port {port} is OPEN")
                 open_ports.append(port)
             else:
                 print(f"  Port {port} is closed")
@@ -43,7 +43,7 @@ def scan_common_ports(target):
             sock.close()
             
         except Exception:
-            print(f"  Port {port} → error (probably closed)")
+            print(f"  Port {port} = error (probably closed)")
     
     return open_ports
 
@@ -72,7 +72,7 @@ def explain_open_ports(open_ports):
             msg = explanations[port]
             print(f"Port {port}: {msg}")
         else:
-            print(f"Port {port}: Open — but we don't have a simple explanation yet")
+            print(f"Port {port}: Open = but we don't have a simple explanation yet")
 
 
 # ────────────────────────────────────────────────
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     else:
         # Step 1: Can we even reach it?
         if ping_host(target):
-            print(f"Great — {target} answered!")
+            print(f"Great {target} answered!")
             
             # Step 2: Look for open ports
             found_ports = scan_common_ports(target)
