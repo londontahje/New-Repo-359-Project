@@ -1,19 +1,32 @@
-# New-Repo-359-Project
-Project for 359
 
-Team Members-
-Ninel 
-London
-
-Networking Enumeration and Vulnerability Scanning Script 
-
-This python script we're going to use will be designed for network enumeration and vulnerability scnning. It would offer a variety of options to scan and analyze network systems, making this a useful tool for security professionals. After the scans, AI will explain the risks/vulnerabilities in plain english, while matching the potential CVEs
-
-Featuring: 
-
-Multiple Scanning Options inc, ICMP, port enumeration, and reverse DNS lookup. 
-Network Traffic ANalysis: analyzing network trafic for further insights 
-Banner Grabbing: Identifying services that is running on open ports 
+# IT 359 Final Project: Network Enumeration & Basic Vulnerability Explanation Tool
 
 
+## Team
+- London 
+- Ninel
 
+## Project Purpose
+Build a beginner-friendly Python tool that:
+- Pings a target to check if it's reachable
+- Scans common ports (21, 22, 23, 80, 443, 445, 3389 etc.)
+- Explains in simple English what each open port typically means and its risk level
+
+Goal: Help new cybersecurity students understand open ports without complex tools.
+
+## Features
+- ICMP ping check
+- TCP connect scan on selected common ports
+- Plain-text risk explanations (e.g., "Port 23 Telnet: Very High risk – no encryption")
+
+## Dependencies / Requirements
+- Python 3 (standard library only: socket, time)
+- No pip installs needed!
+
+## Setup & Execution Steps
+1. Clone or download this repo
+2. Open a terminal/command prompt
+3. Navigate to the project folder
+4. Run:  
+   ```bash
+   python src/simple_network_scanner.py
