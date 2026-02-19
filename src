@@ -13,9 +13,9 @@ import time     # for waiting / timeouts
 
 def ping_host(target):
     """Simple check: can we reach this IP with a ping?"""
-    # your ping code here (ICMP or just socket test)
+    # ping code here (ICMP or just socket test)
     print(f"Trying to ping {target} ...")
-    # ... your logic ...
+    # ... logic ...
     return True  # or False
 
 
