@@ -17,6 +17,14 @@ Build a beginner-friendly Python tool that:
 
 Goal: Help new cybersecurity students understand open ports without complex tools.
 
+## AI Enhancements
+
+While the core scanner gives straightforward explanations for each open port, we've added LLM Models to make things even more understandable.
+
+After the scan finishes, the tool takes the results  things like which ports are open and any response patterns. It will be scanned by AI..  It will look at combinations of open ports and predicting risk levels (Low, Medium, High, or Critical). It can also flag potential threats based on common real-world patterns, such as "multiple remote access ports open at once might point to risky admin exposure."
+
+We kept it simple and beginner-friendly using for classification.
+
 ## Features
 - ICMP ping check
 - TCP connect scan on selected common ports
