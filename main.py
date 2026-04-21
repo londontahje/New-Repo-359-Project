@@ -8,6 +8,8 @@ def scan_ports(target):
     print("\n[+] Scanning:", target)
 
     for port in COMMON_PORTS:
+        print(f"Checking port {port}...")
+
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(1)
 
@@ -50,6 +52,8 @@ def main():
         explain_ports(open_ports)
     else:
         print("\n[-] No open ports found.")
+
+    print(f"\nTotal open ports: {len(open_ports)}")
 
 
 if __name__ == "__main__":
