@@ -47,3 +47,16 @@ No additional installations are required.
 
 ```bash
 python3 simple_network_scanner.py
+
+## Example Usage
+
+Enter target (IP or domain): scanme.nmap.org
+
+Example output:
+
+Port 22 OPEN → SSH – Remote access (secure but risky if exposed)
+Port 80 OPEN → HTTP – Web traffic (not encrypted)
+
+=== BANKING SYSTEM RISK ANALYSIS ===
+Overall Risk Level: MEDIUM
+Reason: Web services exposed to the internet
