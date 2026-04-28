@@ -1,59 +1,49 @@
-
 # IT 359 Final Project: Network Enumeration & Basic Vulnerability Explanation Tool
 
-
-#video presentation
-## *not avalible yet**
+## Video Demo
+https://your-video-link-here
 
 ## Team
-- London 
-- Ninel
+London Tahje  
+Ninel Benitez  
 
 ## Project Purpose
-Build a beginner-friendly Python tool that:
-- Pings a target to check if it's reachable
-- Scans common ports (21, 22, 23, 80, 443, 445, 3389 etc.)
-- Explains in simple English what each open port typically means and its risk level
 
-Goal: Help new cybersecurity students understand open ports without complex tools.
+The purpose of this project is to develop a Python-based tool that scans a system for open ports and explains the associated security risks in a clear and simple way. The tool is designed to help beginners understand how exposed services can create vulnerabilities in a system.
 
-## AI Enhancements
-
-While the core scanner gives straightforward explanations for each open port, we've added LLM Models to make things even more understandable.
-
-After the scan finishes, the tool takes the results  things like which ports are open and any response patterns. It will be scanned by AI..  It will look at combinations of open ports and predicting risk levels (Low, Medium, High, or Critical). It can also flag potential threats based on common real-world patterns, such as "multiple remote access ports open at once might point to risky admin exposure."
-
-We kept it simple and beginner-friendly using for classification.
+This project also simulates how a banking or high-security environment might be evaluated for potential risks.
 
 ## Features
-- ICMP ping check
-- TCP connect scan on selected common ports
-- Plain-text risk explanations (e.g., "Port 23 Telnet: Very High risk – no encryption")
 
-## Dependencies / Requirements
-- Python 3 (standard library only: socket, time)
-- No pip installs needed!
+- Scans common ports (21, 22, 23, 80, 443, 445, 3389)  
+- Identifies open ports using TCP connections  
+- Provides explanations of each service  
+- Performs basic risk analysis (Low, Medium, High, Critical)  
+- Generates a report file (`scan_report.txt`)  
 
-## Setup & Execution Steps
-1. Clone or download this repo
-2. Open a terminal/command prompt
-3. Navigate to the project folder
-4. Run:  
-   ```bash
-   python src/simple_network_scanner.py
+## AI-Inspired Risk Analysis
 
-   # Banking Port Scanner with Risk Analysis
+The tool includes a simple rule-based analysis that evaluates combinations of open ports and assigns a risk level. For example:
 
-## Project Purpose
-This tool scans a system for open ports and analyzes potential cybersecurity risks. It is designed to simulate how a banking system might be evaluated for exposed services.
+- Web services exposed to the internet result in a medium risk classification  
+- SMB exposure results in a high risk classification  
+- Multiple remote access services increase overall risk  
 
-## Features
-- Scans common ports (21, 22, 23, 80, 443, 445, 3389)
-- Identifies services running on open ports
-- Performs risk analysis (Low, Medium, High, Critical)
-- Generates a report file
+This approach helps translate technical results into meaningful security insights.
 
-## How to Run
+## Requirements
+
+- Python 3  
+- Standard libraries only (`socket`, `sys`)  
+
+No additional installations are required.
+
+## Setup and Execution
+
+1. Clone or download the repository  
+2. Open a terminal  
+3. Navigate to the project folder  
+4. Run the program:
 
 ```bash
-python3 src/simple_network_scanner.py
+python3 simple_network_scanner.py
