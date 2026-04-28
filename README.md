@@ -41,3 +41,19 @@ We kept it simple and beginner-friendly using for classification.
 4. Run:  
    ```bash
    python src/simple_network_scanner.py
+
+   # Banking Port Scanner with Risk Analysis
+
+## Project Purpose
+This tool scans a system for open ports and analyzes potential cybersecurity risks. It is designed to simulate how a banking system might be evaluated for exposed services.
+
+## Features
+- Scans common ports (21, 22, 23, 80, 443, 445, 3389)
+- Identifies services running on open ports
+- Performs risk analysis (Low, Medium, High, Critical)
+- Generates a report file
+
+## How to Run
+
+```bash
+python3 src/simple_network_scanner.py
