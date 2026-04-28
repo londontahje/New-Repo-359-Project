@@ -1,0 +1,9 @@
+=== SCAN REPORT ===
+Target: scanme.nmap.org
+
+Port 22 OPEN → SSH – Remote access (secure but risky if exposed)
+Port 80 OPEN → HTTP – Web traffic (not encrypted)
+
+=== RISK ANALYSIS ===
+Risk Level: MEDIUM
+Reason: Web services exposed to the internet

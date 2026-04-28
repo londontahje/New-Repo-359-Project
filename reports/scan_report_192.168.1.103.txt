@@ -1,0 +1,9 @@
+=== BANKING SECURITY SCAN REPORT ===
+
+Target: 192.168.1.103
+
+Open Ports:
+- Port 445 OPEN
+
+Risk Level:
+HIGH

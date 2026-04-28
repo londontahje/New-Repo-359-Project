@@ -1,0 +1,9 @@
+=== BANKING SECURITY SCAN REPORT ===
+
+Target: 127.0.0.1
+
+Open Ports:
+No open ports found
+
+Risk Level:
+LOW
